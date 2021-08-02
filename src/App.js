@@ -1,15 +1,16 @@
-import React from 'react'
-import { AppContainer } from './components/AppContainer'
-import Home  from './components/Home'
+import React from "react";
+import { AppContainer } from "./components/AppContainer";
+import Home from "./components/Home";
+import { GlobalStyle } from "./styled.App";
 
-
-function App() {
-	return (
-		<div>
+export default class App extends React.Component {
+  render() {
+    return (
+      <>
         <AppContainer />
-		<Home/>
-		</div>
-	)
+        <Home />
+        <GlobalStyle />
+      </>
+    );
+  }
 }
-
-export default App
