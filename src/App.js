@@ -10,8 +10,10 @@ export default class App extends React.Component {
   render() {
     return (
       <> 
+        <div>
         <button> Header </button> 
-        <button> Início </button>
+        <button> Início </button> 
+        </div>
 
         {/* <Home /> */}
 
