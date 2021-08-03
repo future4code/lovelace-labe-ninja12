@@ -1,14 +1,19 @@
 import React from "react";
-import { AppContainer } from "./components/AppContainer";
-import Home from "./components/Home";
+
+import Home from "./components/home/Home";
+import ProductsContainer from "./components/productsContainer/ProductsContainer";
 import { GlobalStyle } from "./styled.App";
+
 
 export default class App extends React.Component {
   render() {
     return (
       <>
-        <AppContainer />
-        <Home />
+
+        {/* <Home /> */}
+
+        <ProductsContainer/>
+
         <GlobalStyle />
       </>
     );
