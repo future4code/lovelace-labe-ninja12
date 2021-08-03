@@ -9,7 +9,9 @@ import { GlobalStyle } from "./styled.App";
 export default class App extends React.Component {
   render() {
     return (
-      <>
+      <> 
+        <button> Header </button> 
+        <button> Início </button>
 
         {/* <Home /> */}
 
