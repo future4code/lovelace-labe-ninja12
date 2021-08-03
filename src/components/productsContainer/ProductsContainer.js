@@ -10,13 +10,13 @@ export default class ProductsContainer extends Component {
         <Filters />
         <StyledContainerProduct>
           <ProductCard />
+          {/* <ProductCard />
           <ProductCard />
           <ProductCard />
           <ProductCard />
           <ProductCard />
           <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          <ProductCard /> */}
         </StyledContainerProduct>
       </div>
     )
