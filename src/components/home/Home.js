@@ -10,7 +10,7 @@ export default class Home extends React.Component {
                 <h1>LabeNinjas</h1>
                 <p> O talento certo no momento certo </p>
                 <button>Quero ser um ninja</button>
-                <button>Quero contratar um ninja</button>
+                <button onClick = {this.props.setPageProdutos}>Quero contratar um ninja</button>
 
 
             </div>
