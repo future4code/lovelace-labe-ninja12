@@ -1,4 +1,7 @@
 import React from "react";
+import TelaInicial from './components/telaInicial/TelaInicial'
+import styled from 'styled-components'
+
 import Cart from "./components/cart/Cart";
 
 import Home from "./components/home/Home";
@@ -57,6 +60,7 @@ export default class App extends React.Component {
           <button onClick = {this.setPageHome}>Home</button>
           <button onClick = {this.setPageCarrinho}>Carrinho</button>
         </div>
+		<TelaInicial />
 
         {this.renderCurrentPage()}
 
