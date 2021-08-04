@@ -5,7 +5,7 @@ import Header from './components/header/Header'
 import Cart from './components/cart/Cart'
 import Home from './components/home/Home'
 import ServicesContainer from './components/servicesContainer/ServicesContainer'
-import DetalhesServ from './components/servico/DetalhesServ'
+import DetalhesServ from './components/servicesContainer/services/serviceCard/serviceDetails/ServiceDetails'
 import Cadastro from './components/cadastro/Cadastro'
 
 export default class App extends React.Component {

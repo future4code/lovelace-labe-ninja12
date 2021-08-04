@@ -1,24 +1,17 @@
-import React, { Component } from 'react'
-import ServiceCard from '../serviceCard/ServiceCard'
-import { StyledContainerServices } from './styled-servicesContainer'
-import Filters from './filters/Filters'
+import React from 'react'
 
-export default class ServicesContainer extends Component {
+import Filters from './filters/Filters';
+import Services from './services/Services';
+
+export class ServicesContainer extends React.Component {
   render() {
     return (
-      <div>
+      <>
         <Filters />
-        <StyledContainerServices>
-          <ServiceCard setStateDetalhes={this.props.setStateDetalhes}/>
-          {/* <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard /> */}
-        </StyledContainerServices>
-      </div>
+        <Services setStateDetalhes={this.props.setStateDetalhes} />
+      </>
     )
   }
 }
+
+export default ServicesContainer
