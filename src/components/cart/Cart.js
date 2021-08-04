@@ -10,7 +10,7 @@ export class Cart extends Component {
         <CartItem/>
         <span>Total: R$100,00</span>
         <button>Finalizar Compra</button>
-        <button>Voltar para a lista</button>
+        <button onClick={this.props.setPageServices}>Voltar para a lista</button>
       </div>
     )
   }

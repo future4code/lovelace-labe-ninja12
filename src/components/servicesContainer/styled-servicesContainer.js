@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledContainerProduct = styled.div`
+export const StyledContainerServices = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 
