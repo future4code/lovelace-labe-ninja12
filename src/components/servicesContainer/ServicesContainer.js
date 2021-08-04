@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import ProductCard from '../productCard/ProductCard'
-import { StyledContainerProduct } from './styled-productsContainer'
+import ServiceCard from '../serviceCard/ServiceCard'
+import { StyledContainerServices } from './styled-servicesContainer'
 import Filters from './filters/Filters'
 
-export default class ProductsContainer extends Component {
+export default class ServicesContainer extends Component {
   render() {
     return (
       <div>
         <Filters />
-        <StyledContainerProduct>
-          <ProductCard />
+        <StyledContainerServices>
+          <ServiceCard setStateDetalhes={this.props.setStateDetalhes}/>
           {/* <ProductCard />
           <ProductCard />
           <ProductCard />
@@ -17,7 +17,7 @@ export default class ProductsContainer extends Component {
           <ProductCard />
           <ProductCard />
           <ProductCard /> */}
-        </StyledContainerProduct>
+        </StyledContainerServices>
       </div>
     )
   }

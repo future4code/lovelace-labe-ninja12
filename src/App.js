@@ -1,69 +1,73 @@
-import React from "react";
-import Header from "./components/header/Header";
-import styled from "styled-components";
+import React from 'react'
+import { GlobalStyle } from './styled-App'
 
-import Cart from "./components/cart/Cart";
-
-import Home from "./components/home/Home";
-import ProductsContainer from "./components/productsContainer/ProductsContainer";
-import { GlobalStyle } from "./styled-App";
-import DetalhesServ from "./components/servico/DetalhesServ";
-import ProductCard from "./components/productCard/ProductCard";
+import Header from './components/header/Header'
+import Cart from './components/cart/Cart'
+import Home from './components/home/Home'
+import ServicesContainer from './components/servicesContainer/ServicesContainer'
+import DetalhesServ from './components/servico/DetalhesServ'
+import Cadastro from './components/cadastro/Cadastro'
 
 export default class App extends React.Component {
   state = {
-    currentPage: "home",
-  };
+    currentPage: 'home',
+  }
 
   setPageHome = () => {
-    this.setState({ currentPage: "home" });
-  };
+    this.setState({ currentPage: 'home' })
+  }
 
   setPageCarrinho = () => {
-    this.setState({ currentPage: "carrinho" });
-  };
+    this.setState({ currentPage: 'carrinho' })
+  }
 
-  setPageServicos = () => {
-    this.setState({ currentPage: "servicos" });
-  };
+  setPageCadastro = () => {
+    this.setState({ currentPage: 'cadastro' })
+  }
 
-  setPageProdutos = () => {
-    this.setState({ currentPage: "produtos" });
-  };
+  setPageServices = () => {
+    this.setState({ currentPage: 'services' })
+  }
 
   setStateDetalhes = () => {
-    this.setState({ currentPage: "detalhes" });
-  };
+    this.setState({ currentPage: 'detalhes' })
+  }
 
   renderCurrentPage = () => {
     switch (this.state.currentPage) {
-      case "home":
-        return <Home setPageProdutos={this.setPageProdutos} />;
-      case "carrinho":
-        return <Cart />;
-      // case "servicos":
-      //   return <
-      case "produtos":
-        return <ProductsContainer />;
-      case "detalhes":
-        return <DetalhesServ />;
+      case 'home':
+        return (
+          <Home
+            setPageServices={this.setPageServices}
+            setPageCadastro={this.setPageCadastro}
+          />
+        )
+      case 'carrinho':
+        return <Cart setPageServices={this.setPageServices}/>
+      case 'cadastro':
+        return <Cadastro />
+      case 'services':
+        return <ServicesContainer setStateDetalhes={this.setStateDetalhes} />
+      case 'detalhes':
+        return <DetalhesServ setPageServices={this.setPageServices}/>
 
       default:
-        break;
+        break
     }
-  };
+  }
 
   render() {
     return (
       <>
-        <Header 
-        setPageHome={this.setPageHome}
-        setPageCarrinho={this.setPageCarrinho}  />
+        <Header
+          setPageHome={this.setPageHome}
+          setPageCarrinho={this.setPageCarrinho}
+        />
 
         {this.renderCurrentPage()}
 
         <GlobalStyle />
       </>
-    );
+    )
   }
 }
