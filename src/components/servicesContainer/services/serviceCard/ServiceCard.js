@@ -8,7 +8,7 @@ margin: .5rem;
 `
 
 
-export default class ServiceCard extends Component {
+export default class ServiceCard extends Component { 
   render() {
     const {title, price, dueDate} = this.props.jobValues
     const ano = dueDate.slice(0, 4)
@@ -23,7 +23,7 @@ export default class ServiceCard extends Component {
         <p><strong>Preço:</strong> {price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>
         <p><strong>Prazo:</strong> {dia}/{mes}/{ano}</p>
         <button onClick={this.props.setStateDetalhes}>Ver detalhes</button>
-        <button>Adicionar ao carrinho</button>
+        <button onClick={this.props.getJobByID}>Adicionar ao carrinho</button>
 
       </StlServiceCard>
     )

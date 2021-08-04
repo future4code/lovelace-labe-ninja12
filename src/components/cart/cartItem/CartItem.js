@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import {CardServiceCard} from './Stl-CartItem'
 
 export class CartItem extends Component {
-  render() {
-    return (
+  render() { 
+    return ( 
       <CardServiceCard>
-        <h3>Nome do serviço</h3>
-        <span>Preço do serviço</span>
+        <h3>{this.props.Cart.title}</h3>
+        <span>{this.props.Cart.price}</span>
         <button>Remover</button>
       </CardServiceCard>
     )

@@ -11,11 +11,16 @@ import Cadastro from './components/cadastro/Cadastro'
 export default class App extends React.Component {
   state = {
     currentPage: 'services',
-    jobs: []
+    jobs: [], 
+    cart: []
   }
 
   getJobs = (jobs) =>{
     this.setState({jobs: jobs})
+  } 
+
+  getServices = (services) =>{
+    this.setState({cart: services})
   }
 
   setPageHome = () => {
@@ -48,11 +53,11 @@ export default class App extends React.Component {
           />
         )
       case 'carrinho':
-        return <Cart setPageServices={this.setPageServices}/>
+        return <Cart cart={this.state.cart} setPageServices={this.setPageServices}/>
       case 'cadastro':
         return <Cadastro />
       case 'services':
-        return <ServicesContainer getJobs={(jobs) => this.getJobs(jobs)} setStateDetalhes={this.setStateDetalhes} />
+        return <ServicesContainer getJobs={(jobs) => this.getJobs(jobs)} setStateDetalhes={this.setStateDetalhes} getServices={(services) => this.getServices(services)} /> 
       case 'detalhes':
         return <DetalhesServ setPageServices={this.setPageServices}/>
 
@@ -61,7 +66,7 @@ export default class App extends React.Component {
     }
   }
 
-  render() {
+  render() { 
     return (
       <>
         <Header

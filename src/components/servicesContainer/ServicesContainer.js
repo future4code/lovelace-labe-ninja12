@@ -31,7 +31,7 @@ export class ServicesContainer extends React.Component {
     return (
       <>
         <Filters />
-        <Services jobs={this.state.jobs} setStateDetalhes={this.props.setStateDetalhes} />
+        <Services jobs={this.state.jobs} setStateDetalhes={this.props.setStateDetalhes} getServices={this.props.getServices} />
       </>
     )
   }
