@@ -23,6 +23,7 @@ export class ServicesContainer extends React.Component {
   getAllJobs = async () => {
     const { data: {jobs: job} } = await axios.get(url, headers)
     this.setState({jobs: job});
+    this.props.getJobs(this.state.jobs)
   }
 
   render() {
