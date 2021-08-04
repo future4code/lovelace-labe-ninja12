@@ -10,7 +10,12 @@ import Cadastro from './components/cadastro/Cadastro'
 
 export default class App extends React.Component {
   state = {
-    currentPage: 'home',
+    currentPage: 'services',
+    jobs: []
+  }
+
+  getJobs = (jobs) =>{
+    this.setState({jobs: jobs})
   }
 
   setPageHome = () => {
@@ -47,7 +52,7 @@ export default class App extends React.Component {
       case 'cadastro':
         return <Cadastro />
       case 'services':
-        return <ServicesContainer setStateDetalhes={this.setStateDetalhes} />
+        return <ServicesContainer getJobs={(jobs) => this.getJobs(jobs)} setStateDetalhes={this.setStateDetalhes} />
       case 'detalhes':
         return <DetalhesServ setPageServices={this.setPageServices}/>
 
