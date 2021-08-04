@@ -7,6 +7,7 @@ import Home from './components/home/Home'
 import ServicesContainer from './components/servicesContainer/ServicesContainer'
 import DetalhesServ from './components/servicesContainer/services/serviceCard/serviceDetails/ServiceDetails'
 import Cadastro from './components/cadastro/Cadastro'
+import axios from 'axios'
 
 export default class App extends React.Component {
   state = {
@@ -34,9 +35,18 @@ export default class App extends React.Component {
     this.setState({ currentPage: 'services' })
   }
 
-  setStateDetalhes = () => {
+  setStateDetalhes = async (id) => {
     this.setState({ currentPage: 'detalhes' })
+    const { url, headers } = {
+      url: 'https://labeninjas.herokuapp.com/jobs',
+      headers: {headers: {
+        Authorization: 'a5d991d4-4742-405f-89df-b4c0b2bc0758',
+      },}
+    };
+    const res = await axios.get (`${url}/${id}`, headers)
+    console.log(res)
   }
+
 
   renderCurrentPage = () => {
     switch (this.state.currentPage) {
