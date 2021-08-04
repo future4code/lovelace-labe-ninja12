@@ -1,12 +1,12 @@
 import React from "react";
-import TelaInicial from './components/telaInicial/TelaInicial'
-import styled from 'styled-components'
+import Header from "./components/header/Header";
+import styled from "styled-components";
 
 import Cart from "./components/cart/Cart";
 
 import Home from "./components/home/Home";
 import ProductsContainer from "./components/productsContainer/ProductsContainer";
-import { GlobalStyle } from "./styled.App";
+import { GlobalStyle } from "./styled-App";
 import DetalhesServ from "./components/servico/DetalhesServ";
 import ProductCard from "./components/productCard/ProductCard";
 
@@ -38,7 +38,7 @@ export default class App extends React.Component {
   renderCurrentPage = () => {
     switch (this.state.currentPage) {
       case "home":
-        return <Home setPageProdutos = {this.setPageProdutos} />;
+        return <Home setPageProdutos={this.setPageProdutos} />;
       case "carrinho":
         return <Cart />;
       // case "servicos":
@@ -51,19 +51,16 @@ export default class App extends React.Component {
       default:
         break;
     }
-  }
+  };
 
   render() {
     return (
       <>
-        <div>
-          <button onClick = {this.setPageHome}>Home</button>
-          <button onClick = {this.setPageCarrinho}>Carrinho</button>
-        </div>
-		<TelaInicial />
+        <Header 
+        setPageHome={this.setPageHome}
+        setPageCarrinho={this.setPageCarrinho}  />
 
         {this.renderCurrentPage()}
-
 
         <GlobalStyle />
       </>
