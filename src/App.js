@@ -7,11 +7,13 @@ import Home from './components/home/Home'
 import ServicesContainer from './components/servicesContainer/ServicesContainer'
 import DetalhesServ from './components/servicesContainer/services/serviceCard/serviceDetails/ServiceDetails'
 import Cadastro from './components/cadastro/Cadastro'
+import axios from 'axios'
 
 export default class App extends React.Component {
   state = {
     currentPage: 'services',
-    jobs: []
+    jobs: [] ,
+    jobDetail: ''
   }
 
   getJobs = (jobs) =>{
@@ -34,9 +36,19 @@ export default class App extends React.Component {
     this.setState({ currentPage: 'services' })
   }
 
-  setStateDetalhes = () => {
+  setStateDetalhes = async (id) => {
     this.setState({ currentPage: 'detalhes' })
+    const { url, headers } = {
+      url: 'https://labeninjas.herokuapp.com/jobs',
+      headers: {headers: {
+        Authorization: 'a5d991d4-4742-405f-89df-b4c0b2bc0758',
+      },}
+    };
+    const res = await axios.get (`${url}/${id}`, headers)
+    this.setState({jobDetail: res.data})
+    
   }
+
 
   renderCurrentPage = () => {
     switch (this.state.currentPage) {
@@ -54,7 +66,7 @@ export default class App extends React.Component {
       case 'services':
         return <ServicesContainer getJobs={(jobs) => this.getJobs(jobs)} setStateDetalhes={this.setStateDetalhes} />
       case 'detalhes':
-        return <DetalhesServ setPageServices={this.setPageServices}/>
+        return <DetalhesServ setPageServices={this.setPageServices} jobDetail={this.state.jobDetail}/>
 
       default:
         break
