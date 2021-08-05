@@ -10,8 +10,8 @@ export class Select extends React.Component {
       </option>
     ));
     return (
-      <select onChange={event}>
-        <option selected disabled>
+      <select onChange={event} className="selctElement">
+        <option value={'DEFAULT'} defaultValue>
           Escolha:
         </option>
         {selectMap}
