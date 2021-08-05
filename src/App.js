@@ -38,6 +38,7 @@ export default class App extends React.Component {
 
   setStateDetalhes = async (id) => {
     this.setState({ currentPage: 'detalhes' })
+    this.setState({jobDetail: false})
     const { url, headers } = {
       url: 'https://labeninjas.herokuapp.com/jobs',
       headers: {headers: {
