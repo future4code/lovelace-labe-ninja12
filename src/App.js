@@ -12,7 +12,8 @@ import axios from 'axios'
 export default class App extends React.Component {
   state = {
     currentPage: 'services',
-    jobs: []
+    jobs: [] ,
+    jobDetail: ''
   }
 
   getJobs = (jobs) =>{
@@ -44,7 +45,8 @@ export default class App extends React.Component {
       },}
     };
     const res = await axios.get (`${url}/${id}`, headers)
-    console.log(res)
+    this.setState({jobDetail: res.data})
+    
   }
 
 
@@ -64,7 +66,7 @@ export default class App extends React.Component {
       case 'services':
         return <ServicesContainer getJobs={(jobs) => this.getJobs(jobs)} setStateDetalhes={this.setStateDetalhes} />
       case 'detalhes':
-        return <DetalhesServ setPageServices={this.setPageServices}/>
+        return <DetalhesServ setPageServices={this.setPageServices} jobDetail={this.state.jobDetail}/>
 
       default:
         break
