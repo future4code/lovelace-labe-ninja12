@@ -11,7 +11,7 @@ export class Select extends React.Component {
     ));
     return (
       <select onChange={event} className="selctElement">
-        <option disabled defaultValue>
+        <option value={'DEFAULT'} defaultValue>
           Escolha:
         </option>
         {selectMap}
