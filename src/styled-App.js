@@ -7,6 +7,9 @@ export const GlobalStyle = createGlobalStyle`
         display: grid;
         grid-template-rows: 80px 1fr;
         text-align: center;
+        /* background-color: #141F36; */
+        /* height: 100vh; */
+        /* color: white; */
 
     };
     * {
