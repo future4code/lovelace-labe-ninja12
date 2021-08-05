@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react'
 
 export class Button extends React.Component {
   render() {
-    const { type, nome, event } = this.props;
+    const { type, nome, event } = this.props
     return (
       <button type={type} onClick={event}>
         {nome}
       </button>
-    );
+    )
   }
 }
 
-export default Button;
+export default Button

@@ -17,8 +17,8 @@ export const StlLoading = styled.div`
   height: 50px;
   width: 50px;
   @keyframes is-rotating {
-  to {
-    transform: rotate(1turn);
+    to {
+      transform: rotate(1turn);
+    }
   }
-}
 `

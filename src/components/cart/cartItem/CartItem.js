@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {CardServiceCard} from './Stl-CartItem'
+import { CardServiceCard } from './Stl-CartItem'
 
 export class CartItem extends Component {
   render() {

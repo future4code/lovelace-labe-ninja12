@@ -1,9 +1,9 @@
-import React from 'react';
-import axios from 'axios';
+import React from 'react'
+import axios from 'axios'
 
-import Input from '../input/Input';
-import Select from '../select/Select';
-import Button from '../button/Button';
+import Input from '../input/Input'
+import Select from '../select/Select'
+import Button from '../button/Button'
 
 export class Cadastro extends React.Component {
   state = {
@@ -12,32 +12,32 @@ export class Cadastro extends React.Component {
     precoInputValue: '',
     formaPagamentoInputValue: [],
     dataInputValue: '',
-  };
+  }
 
   onChangeNameInput = ({ target }) =>
-    this.setState({ nomeInputValue: target.value });
+    this.setState({ nomeInputValue: target.value })
 
   onChangeDescInput = ({ target }) =>
-    this.setState({ descInputValue: target.value });
+    this.setState({ descInputValue: target.value })
 
   onChangePrecoInput = ({ target }) =>
-    this.setState({ precoInputValue: target.value });
+    this.setState({ precoInputValue: target.value })
 
   onChangeFormaPagamentoInput = ({ target }) =>
-    this.setState({ formaPagamentoInputValue: [target.value] });
+    this.setState({ formaPagamentoInputValue: [target.value] })
 
   onChangeDataInput = ({ target }) =>
-    this.setState({ dataInputValue: target.value });
+    this.setState({ dataInputValue: target.value })
 
   criarCadastro = async (event) => {
-    event.preventDefault();
+    event.preventDefault()
     const {
       nomeInputValue,
       descInputValue,
       precoInputValue,
       formaPagamentoInputValue,
       dataInputValue,
-    } = this.state;
+    } = this.state
     const { url, body, headers } = {
       url: 'https://labeninjas.herokuapp.com/jobs',
       body: {
@@ -50,14 +50,14 @@ export class Cadastro extends React.Component {
       headers: {
         Authorization: 'a5d991d4-4742-405f-89df-b4c0b2bc0758',
       },
-    };
+    }
 
-    await axios.post(url, body, { headers });
-  };
+    await axios.post(url, body, { headers })
+  }
 
   render() {
     const { nomeInputValue, descInputValue, precoInputValue, dataInputValue } =
-      this.state;
+      this.state
     const {
       onChangeNameInput,
       onChangeDescInput,
@@ -65,7 +65,7 @@ export class Cadastro extends React.Component {
       onChangeFormaPagamentoInput,
       onChangeDataInput,
       criarCadastro,
-    } = this;
+    } = this
 
     const inputsInfos = [
       {
@@ -95,7 +95,7 @@ export class Cadastro extends React.Component {
         event: onChangeDataInput,
         value: dataInputValue,
       },
-    ];
+    ]
 
     const optionsValues = [
       'Cartão de Débito',
@@ -103,7 +103,7 @@ export class Cadastro extends React.Component {
       'PayPal',
       'Boleto',
       'Pix',
-    ];
+    ]
 
     const showInputs = inputsInfos.map(
       ({ id, type, placeholder, event, value }) => (
@@ -115,13 +115,13 @@ export class Cadastro extends React.Component {
           value={value}
         />
       )
-    );
+    )
 
     return (
       <div>
         <h2>Cadastre o seu serviço</h2>
 
-        <form name="cadastro">
+        <form name='cadastro'>
           {showInputs}
           <Select event={onChangeFormaPagamentoInput} options={optionsValues} />
           <Button
@@ -131,8 +131,8 @@ export class Cadastro extends React.Component {
           />
         </form>
       </div>
-    );
+    )
   }
 }
 
-export default Cadastro;
+export default Cadastro

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Div, StlLoading} from './slt-loading'
+import { Div, StlLoading } from './slt-loading'
 
 export class Loading extends Component {
   render() {

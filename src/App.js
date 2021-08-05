@@ -1,7 +1,6 @@
 import React from 'react'
 import { GlobalStyle } from './styled-App'
 
-
 import Header from './components/header/Header'
 import Cart from './components/cart/Cart'
 import Home from './components/home/Home'
@@ -11,17 +10,16 @@ import Cadastro from './components/cadastro/Cadastro'
 import axios from 'axios'
 import Loading from './components/loading/Loading'
 
-
 export default class App extends React.Component {
   state = {
-    currentPage: 'services',
-    jobs: [] ,
+    currentPage: 'home',
+    jobs: [],
     jobDetail: '',
-    loading: false
+    loading: false,
   }
 
-  getJobs = (jobs) =>{
-    this.setState({jobs: jobs})
+  getJobs = (jobs) => {
+    this.setState({ jobs: jobs })
   }
 
   setPageHome = () => {
@@ -42,35 +40,35 @@ export default class App extends React.Component {
 
   setStateDetalhes = async (id) => {
     this.setState({ currentPage: 'detalhes' })
-    this.setState({jobDetail: false})
+    this.setState({ jobDetail: false })
     const { url, headers } = {
       url: 'https://labeninjas.herokuapp.com/jobs',
-      headers: {headers: {
-        Authorization: 'a5d991d4-4742-405f-89df-b4c0b2bc0758',
-      },}
-    };
-
-    this.setState({loading: true})
-    try{
-    const res = await axios.get (`${url}/${id}`, headers)
-    this.setState({loading: false})
-    this.setState({jobDetail: res.data})
-    }catch{
+      headers: {
+        headers: {
+          Authorization: 'a5d991d4-4742-405f-89df-b4c0b2bc0758',
+        },
+      },
     }
-    
+
+    this.setState({ loading: true })
+    try {
+      const res = await axios.get(`${url}/${id}`, headers)
+      this.setState({ loading: false })
+      this.setState({ jobDetail: res.data })
+    } catch {}
   }
 
   renderLoading = () => {
     switch (this.state.loading) {
       case true:
-        return <Loading/>
+        return <Loading />
       default:
-        break;
+        break
     }
   }
 
   switchLoading = (boolean) => {
-    this.setState({loading: boolean})
+    this.setState({ loading: boolean })
   }
 
   renderCurrentPage = () => {
@@ -84,13 +82,25 @@ export default class App extends React.Component {
           />
         )
       case 'carrinho':
-        return <Cart setPageServices={this.setPageServices}/>
+        return <Cart setPageServices={this.setPageServices} />
       case 'cadastro':
         return <Cadastro />
       case 'services':
-        return <ServicesContainer switchLoading={this.switchLoading} getJobs={(jobs) => this.getJobs(jobs)} setStateDetalhes={this.setStateDetalhes} />
+        return (
+          <ServicesContainer
+            switchLoading={this.switchLoading}
+            getJobs={(jobs) => this.getJobs(jobs)}
+            setStateDetalhes={this.setStateDetalhes}
+          />
+        )
       case 'detalhes':
-        return <DetalhesServ switchLoading={(boolean)=>this.switchLoading(boolean)} setPageServices={this.setPageServices} jobDetail={this.state.jobDetail}/>
+        return (
+          <DetalhesServ
+            switchLoading={(boolean) => this.switchLoading(boolean)}
+            setPageServices={this.setPageServices}
+            jobDetail={this.state.jobDetail}
+          />
+        )
       default:
         break
     }

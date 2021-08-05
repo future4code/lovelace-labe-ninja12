@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import Input from '../../input/Input';
-import Select from '../../select/Select';
+import Input from '../../input/Input'
+import Select from '../../select/Select'
 
 export default class Filters extends Component {
   render() {
@@ -10,8 +10,8 @@ export default class Filters extends Component {
       onChangeMaxInput,
       onChangeSearchInput,
       onChangeOrderInput,
-    } = this.props;
-    const { minInputValue, maxInputValue, searchInputValue } = this.props;
+    } = this.props
+    const { minInputValue, maxInputValue, searchInputValue } = this.props
 
     const inputsInfos = [
       {
@@ -35,9 +35,9 @@ export default class Filters extends Component {
         event: onChangeSearchInput,
         value: searchInputValue,
       },
-    ];
+    ]
 
-    const options = ['Maior valor', 'Menor valor', 'Título', 'Prazo'];
+    const options = ['Maior valor', 'Menor valor', 'Título', 'Prazo']
 
     const renderInputs = ({ id, type, placeholder, event, value }) => (
       <Input
@@ -47,13 +47,13 @@ export default class Filters extends Component {
         event={event}
         value={value}
       />
-    );
-    const showInputs = inputsInfos.map(renderInputs);
+    )
+    const showInputs = inputsInfos.map(renderInputs)
     return (
       <section>
         {showInputs}
         <Select event={onChangeOrderInput} options={options} />
       </section>
-    );
+    )
   }
 }

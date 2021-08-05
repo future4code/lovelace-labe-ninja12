@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
 export class Input extends React.Component {
   render() {
-    const { type, placeholder, value, event } = this.props;
+    const { type, placeholder, value, event } = this.props
     return (
       <input
         type={type}
@@ -11,8 +11,8 @@ export class Input extends React.Component {
         onChange={event}
         required
       />
-    );
+    )
   }
 }
 
-export default Input;
+export default Input

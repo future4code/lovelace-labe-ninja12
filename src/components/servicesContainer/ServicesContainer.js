@@ -1,8 +1,8 @@
-import axios from 'axios';
-import React from 'react';
+import axios from 'axios'
+import React from 'react'
 
-import Filters from './filters/Filters';
-import Services from './services/Services';
+import Filters from './filters/Filters'
+import Services from './services/Services'
 
 const { url, headers } = {
   url: 'https://labeninjas.herokuapp.com/jobs',
@@ -11,7 +11,7 @@ const { url, headers } = {
       Authorization: 'a5d991d4-4742-405f-89df-b4c0b2bc0758',
     },
   },
-};
+}
 
 export class ServicesContainer extends React.Component {
   state = {
@@ -20,31 +20,31 @@ export class ServicesContainer extends React.Component {
     maxInputValue: '',
     searchInputValue: '',
     orderInputValue: '',
-  };
+  }
 
   componentDidMount() {
-    this.getAllJobs();
+    this.getAllJobs()
   }
 
   getAllJobs = async () => {
     const {
       data: { jobs: job },
-    } = await axios.get(url, headers);
-    this.setState({ jobs: job });
-    this.props.getJobs(this.state.jobs);
-  };
+    } = await axios.get(url, headers)
+    this.setState({ jobs: job })
+    this.props.getJobs(this.state.jobs)
+  }
 
   onChangeMinInput = ({ target }) =>
-    this.setState({ minInputValue: +target.value });
+    this.setState({ minInputValue: +target.value })
 
   onChangeMaxInput = ({ target }) =>
-    this.setState({ maxInputValue: +target.value });
+    this.setState({ maxInputValue: +target.value })
 
   onChangeSearchInput = ({ target }) =>
-    this.setState({ searchInputValue: target.value });
+    this.setState({ searchInputValue: target.value })
 
   onChangeOrderInput = ({ target }) =>
-    this.setState({ orderInputValue: target.value });
+    this.setState({ orderInputValue: target.value })
 
   render() {
     const {
@@ -52,9 +52,9 @@ export class ServicesContainer extends React.Component {
       onChangeMaxInput,
       onChangeSearchInput,
       onChangeOrderInput,
-    } = this;
+    } = this
     const { minInputValue, maxInputValue, searchInputValue, orderInputValue } =
-      this.state;
+      this.state
     return (
       <>
         <Filters
@@ -72,8 +72,8 @@ export class ServicesContainer extends React.Component {
           setStateDetalhes={this.props.setStateDetalhes}
         />
       </>
-    );
+    )
   }
 }
 
-export default ServicesContainer;
+export default ServicesContainer
