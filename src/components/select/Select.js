@@ -1,4 +1,5 @@
 import React from 'react';
+import {StlSelect} from '../../styles/styles';
 
 export class Select extends React.Component {
   render() {
@@ -10,12 +11,12 @@ export class Select extends React.Component {
       </option>
     ));
     return (
-      <select onChange={event} className="selctElement">
+      <StlSelect onChange={event} className="selctElement">
         <option value={'DEFAULT'} defaultValue>
           Escolha:
         </option>
         {selectMap}
-      </select>
+      </StlSelect>
     );
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { GlobalStyle } from './styled-App'
+import { GlobalStyle } from './styles/styled-App'
 
 import Header from './components/header/Header'
 import Cart from './components/cart/Cart'

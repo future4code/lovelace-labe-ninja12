@@ -5,7 +5,7 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
     #root{
         display: grid;
-        grid-template-rows: 55px 1fr;
+        grid-template-rows: 70px 1fr;
         text-align: center;
         background-color: #141f36;
         height: 100vh;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import ServiceCard from './serviceCard/ServiceCard';
-import { StyledContainerServices } from './styled-services';
+import { StyledContainerServices } from '../../../styles/styles';
 
 const { url, headers } = {
   url: 'https://labeninjas.herokuapp.com/jobs',

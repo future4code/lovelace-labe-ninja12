@@ -56,7 +56,7 @@ export class ServicesContainer extends React.Component {
     const { minInputValue, maxInputValue, searchInputValue, orderInputValue } =
       this.state;
     return (
-      <>
+      <div>
         <Filters
           onChangeMinInput={onChangeMinInput}
           onChangeMaxInput={onChangeMaxInput}
@@ -72,7 +72,7 @@ export class ServicesContainer extends React.Component {
           orderInputValue={orderInputValue}
           setStateDetalhes={this.props.setStateDetalhes}
         />
-      </>
+      </div>
     );
   }
 }

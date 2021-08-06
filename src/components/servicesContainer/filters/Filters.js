@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {InputsSection} from '../../../styles/styles'
 
 import Input from '../../input/Input';
 import Select from '../../select/Select';
@@ -50,10 +51,10 @@ export default class Filters extends Component {
     );
     const showInputs = inputsInfos.map(renderInputs);
     return (
-      <section>
+      <InputsSection>
         {showInputs}
         <Select event={onChangeOrderInput} options={options} />
-      </section>
+      </InputsSection>
     );
   }
 }

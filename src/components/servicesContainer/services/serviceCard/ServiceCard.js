@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import {StlServiceCard} from '../../../../styles/styles'
 
-const StlServiceCard = styled.div`
-border: 1px solid black;
-padding: 1rem;
-margin: .5rem;
-`
 
 
 export default class ServiceCard extends Component { 
@@ -20,8 +15,8 @@ export default class ServiceCard extends Component {
     return (
       <StlServiceCard>
         <h3>{toUpperTittle}</h3>
-        <p><strong>Preço:</strong> {price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>
-        <p><strong>Prazo:</strong> {dia}/{mes}/{ano}</p>
+        <p><strong>Preço: </strong>{price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>
+        <p><strong>Prazo: </strong>{dia}/{mes}/{ano}</p>
         <button onClick={()=>this.props.setStateDetalhes(id)}>Ver detalhes</button>
         <button onClick={() => this.props.getJobByID(id)}>Adicionar ao carrinho</button>
       </StlServiceCard>
