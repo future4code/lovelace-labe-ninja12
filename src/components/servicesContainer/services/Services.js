@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import ServiceCard from './serviceCard/ServiceCard';
 import { StyledContainerServices } from './styled-services';
+
+const { url, headers } = {
+  url: 'https://labeninjas.herokuapp.com/jobs',
+  headers: {
+    Authorization: 'a5d991d4-4742-405f-89df-b4c0b2bc0758',
+  },
+};
 
 export default class Services extends Component {
   state = {
@@ -8,7 +17,7 @@ export default class Services extends Component {
   }
   
   getJobByID = async (id) => {
-    const { data } = await axios.get(`${url}/${id}`, headers) 
+    const { data } = await axios.get(`${url}/${id}`, { headers }) 
     this.setState({cart: [...this.state.cart, data]}) 
     this.props.getServices(this.state.cart)
   }
@@ -83,6 +92,7 @@ export default class Services extends Component {
         <ServiceCard
           key={job.id}
           jobValues={job}
+          getJobByID={(id) => this.getJobByID(id)}
           setStateDetalhes={setStateDetalhes}
         />
       ));

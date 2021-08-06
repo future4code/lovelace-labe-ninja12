@@ -23,7 +23,7 @@ export default class ServiceCard extends Component {
         <p><strong>Preço:</strong> {price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>
         <p><strong>Prazo:</strong> {dia}/{mes}/{ano}</p>
         <button onClick={()=>this.props.setStateDetalhes(id)}>Ver detalhes</button>
-        <button onClick={this.props.getJobByID}>Adicionar ao carrinho</button>
+        <button onClick={() => this.props.getJobByID(id)}>Adicionar ao carrinho</button>
       </StlServiceCard>
     )
   }

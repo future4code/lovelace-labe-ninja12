@@ -64,6 +64,7 @@ export class ServicesContainer extends React.Component {
           onChangeOrderInput={onChangeOrderInput}
         />
         <Services
+          getServices={this.props.getServices}
           jobs={this.state.jobs}
           minInputValue={minInputValue}
           maxInputValue={maxInputValue}
