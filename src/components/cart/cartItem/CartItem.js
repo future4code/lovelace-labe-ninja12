@@ -7,7 +7,7 @@ export class CartItem extends Component {
       <CardServiceCard>
         <h3>{this.props.Cart.title}</h3>
         <span>{this.props.Cart.price}</span>
-        <button>Remover</button>
+        <button onClick={() => this.props.removeSelectedJob(this.props.Cart.id)}>Remover</button>
       </CardServiceCard>
     )
   }
