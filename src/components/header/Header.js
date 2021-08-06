@@ -1,17 +1,22 @@
 import React from 'react'
-import { HeaderContainer } from './Stl-Header'
+import { Header, ButtonHeader} from '../../styles/styles'
+import Logo from '../../img/ninja.svg'
 
 
 export default class TelaInicial extends React.Component{
     render(){
         return(
-            <HeaderContainer>
+            <Header>
+                <div>
+                <img src= {Logo}/>
                 <h1>LabeNinjas</h1>
+                </div>
+                
                 <nav>
-                    <button onClick={this.props.setPageHome}>Home</button>
-                    <button onClick={this.props.setPageCarrinho}>Carrinho</button>
+                    <ButtonHeader onClick={this.props.setPageHome}>Home</ButtonHeader>
+                    <ButtonHeader onClick={this.props.setPageCarrinho}>Carrinho</ButtonHeader>
                 </nav>
-            </HeaderContainer>
+            </Header>
         )
     }
 }
