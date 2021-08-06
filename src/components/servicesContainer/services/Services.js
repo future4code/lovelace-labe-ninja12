@@ -3,6 +3,16 @@ import ServiceCard from './serviceCard/ServiceCard';
 import { StyledContainerServices } from './styled-services';
 
 export default class Services extends Component {
+  state = {
+    cart: []
+  }
+  
+  getJobByID = async (id) => {
+    const { data } = await axios.get(`${url}/${id}`, headers) 
+    this.setState({cart: [...this.state.cart, data]}) 
+    this.props.getServices(this.state.cart)
+  }
+  
   render() {
     const {
       minInputValue,
