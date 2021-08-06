@@ -16,6 +16,13 @@ export default class Filters extends Component {
 
     const inputsInfos = [
       {
+        id: 3,
+        type: 'text',
+        placeholder: 'Busca por título ou descrição',
+        event: onChangeSearchInput,
+        value: searchInputValue,
+      },
+      {
         id: 1,
         type: 'number',
         placeholder: 'Valor mínimo',
@@ -28,13 +35,6 @@ export default class Filters extends Component {
         placeholder: 'Valor máximo',
         event: onChangeMaxInput,
         value: maxInputValue,
-      },
-      {
-        id: 3,
-        type: 'text',
-        placeholder: 'Busca por título ou descrição',
-        event: onChangeSearchInput,
-        value: searchInputValue,
       },
     ];
 
