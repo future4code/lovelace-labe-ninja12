@@ -3,6 +3,7 @@ import React from 'react';
 
 import Filters from './filters/Filters';
 import Services from './services/Services';
+import { StlJobContainer } from '../../styles/styles'
 
 const { url, headers } = {
   url: 'https://labeninjas.herokuapp.com/jobs',
@@ -56,7 +57,7 @@ export class ServicesContainer extends React.Component {
     const { minInputValue, maxInputValue, searchInputValue, orderInputValue } =
       this.state;
     return (
-      <>
+      <StlJobContainer>
         <Filters
           onChangeMinInput={onChangeMinInput}
           onChangeMaxInput={onChangeMaxInput}
@@ -72,7 +73,7 @@ export class ServicesContainer extends React.Component {
           orderInputValue={orderInputValue}
           setStateDetalhes={this.props.setStateDetalhes}
         />
-      </>
+      </StlJobContainer>
     );
   }
 }

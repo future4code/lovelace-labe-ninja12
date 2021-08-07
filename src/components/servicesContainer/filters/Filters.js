@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {InputsSection} from '../../../styles/styles'
 
 import Input from '../../input/Input';
 import Select from '../../select/Select';
@@ -15,6 +16,13 @@ export default class Filters extends Component {
 
     const inputsInfos = [
       {
+        id: 3,
+        type: 'text',
+        placeholder: 'Busca por título ou descrição',
+        event: onChangeSearchInput,
+        value: searchInputValue,
+      },
+      {
         id: 1,
         type: 'number',
         placeholder: 'Valor mínimo',
@@ -27,13 +35,6 @@ export default class Filters extends Component {
         placeholder: 'Valor máximo',
         event: onChangeMaxInput,
         value: maxInputValue,
-      },
-      {
-        id: 3,
-        type: 'text',
-        placeholder: 'Busca por título ou descrição',
-        event: onChangeSearchInput,
-        value: searchInputValue,
       },
     ];
 
@@ -50,10 +51,10 @@ export default class Filters extends Component {
     );
     const showInputs = inputsInfos.map(renderInputs);
     return (
-      <section>
+      <InputsSection>
         {showInputs}
         <Select event={onChangeOrderInput} options={options} />
-      </section>
+      </InputsSection>
     );
   }
 }
