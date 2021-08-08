@@ -4,6 +4,8 @@ import axios from 'axios';
 import Input from '../input/Input';
 import Select from '../select/Select';
 import Button from '../button/Button';
+import { Title } from './Stl-Cadastro';
+import { Form } from './Stl-Cadastro';
 
 export class Cadastro extends React.Component {
   state = {
@@ -119,9 +121,9 @@ export class Cadastro extends React.Component {
 
     return (
       <div>
-        <h2>Cadastre o seu serviço</h2>
+        <Title>Cadastre o seu serviço</Title>
 
-        <form name="cadastro">
+        <Form name="cadastro">
           {showInputs}
           <Select event={onChangeFormaPagamentoInput} options={optionsValues} />
           <Button
@@ -129,7 +131,7 @@ export class Cadastro extends React.Component {
             nome={'Cadastrar Serviço'}
             event={criarCadastro}
           />
-        </form>
+        </Form>
       </div>
     );
   }
