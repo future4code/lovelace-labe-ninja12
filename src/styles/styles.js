@@ -4,17 +4,25 @@ export const Header = styled.header`
   color: white;
   box-shadow: 1px 1px 20px rgb(27 92 220 / 30%);
 
-  background: rgb(7,18,42);
-background: linear-gradient(12deg, rgba(7,18,42,1) 0%, rgba(13,29,61,1) 100%);
+  background: rgb(7, 18, 42);
+  background: linear-gradient(
+    12deg,
+    rgba(7, 18, 42, 1) 0%,
+    rgba(13, 29, 61, 1) 100%
+  );
   display: flex;
   justify-content: space-between;
   height: 50px;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   height: 100%;
   img {
     width: 50px;
     margin-right: 10px;
+  }
+  nav {
+    display: flex;
+    align-items: center;
   }
 
   div {
@@ -32,37 +40,50 @@ export const StlLogo = styled.div`
   border-radius: 28px;
   width: 50px;
   height: 50px;
-  border: 3px solid #466BE3;
+  border: 3px solid #466be3;
   margin-right: 20px;
   box-shadow: 1px 1px 10px rgb(27 92 220 / 80%);
-
 `
 
 export const ButtonHeader = styled.button`
-  padding: 8px 10px;
-  background: rgb(45, 108, 234);
-  background: linear-gradient(
-    90deg,
-    rgba(45, 108, 234, 1) 0%,
-    rgba(46, 163, 224, 1) 100%
-  );
   box-shadow: 1px 1px 10px rgb(27 92 220 / 60%);
   color: white;
   border-radius: 8px;
   border: none;
-  transition: all 0.5s;
   font-weight: 700;
+  position: relative;
+  background: linear-gradient(90deg, #2d6cea, #2ea3e0);
   :nth-child(1) {
-    margin: 0 10px 0 0;
+    width: 60px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  :nth-child(2) {
+    width: 80px;
+    height: 30px;
   }
   :hover {
     cursor: pointer;
-    background: rgb(46, 163, 224);
-    background: linear-gradient(
-      90deg,
-      rgba(46, 163, 224, 1) 0%,
-      rgba(45, 108, 234, 1) 100%
-    );
+  }
+`
+export const StyledBgHoverGradient = styled.div`
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 8px;
+  opacity: 0;
+  background: linear-gradient(90deg, #2ea3e0, #2d6cea);
+  transition: all 0.3s;
+  height: 100%;
+  width: 100%;
+  margin-right: 10px;
+
+  :hover {
+    transition: all 0.3s;
+    opacity: 100%;
+    cursor: pointer;
   }
 `
 
@@ -71,16 +92,14 @@ export const StlInput = styled.input`
   border-radius: 8px;
   border: 1px solid transparent;
   margin-right: 15px;
-  ::-webkit-inner-spin-button { 
+  ::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
   :nth-child(3) {
     width: 125px;
-    
   }
   :nth-child(2) {
     width: 125px;
-    
   }
 `
 
@@ -89,7 +108,7 @@ export const StlSelect = styled.select`
   border-radius: 8px;
   border: 1px solid transparent;
 
-  option{
+  option {
     height: 50px;
   }
 `
@@ -137,25 +156,20 @@ export const ButtonsContainer = styled.div`
 `
 export const CartButton = styled.button`
   border: 1px solid transparent;
-  width: 45px;
-  height: 45px;
-  border-radius: 25px;
-  position: relative;
+  width: 31px;
+  height: 31px;
+  clip-path: circle();
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   transition: all 0.2s ease;
+  background-color: #2e72ea;
   :hover {
-    background-color: #e2dcdb;
+    background-color: #2864cc;
     cursor: pointer;
   }
-  img {
-    position: absolute;
-    right: 5px;
-    top: 6px;
-    width: 30px;
-  }
-`
-export const StlJobContainer = styled.main`
-  padding: 1rem;
 `
 
 export const StlButtonDetail = styled.button`
@@ -165,10 +179,12 @@ export const StlButtonDetail = styled.button`
   border: none;
   background-color: #2f3f56;
   color: white;
-  margin-right: 20px;
   transition: all 0.2s ease;
   :hover {
     cursor: pointer;
     background-color: #233041;
   }
+`
+export const StlJobContainer = styled.main`
+  padding: 1rem;
 `

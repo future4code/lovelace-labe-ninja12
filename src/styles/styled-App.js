@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     background: linear-gradient(0deg, rgba(20,31,54,1) 0%, #152953 100%);
     height: auto;
     min-height: 100vh;
+    position: relative;
   };
   * {
     margin: 0px;
