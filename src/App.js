@@ -12,7 +12,7 @@ import axios from 'axios'
 
 export default class App extends React.Component {
   state = {
-    currentPage: 'services',
+    currentPage: 'home',
     jobs: [], 
     cart: [],
     jobDetail: ''
