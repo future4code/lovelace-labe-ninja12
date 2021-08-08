@@ -45,21 +45,22 @@ export const StlLogo = styled.div`
   box-shadow: 1px 1px 10px rgb(27 92 220 / 80%);
 `
 
-export const ButtonHeader = styled.button`
+export const ButtonGradient = styled.button`
   box-shadow: 1px 1px 10px rgb(27 92 220 / 60%);
   color: white;
   border-radius: 8px;
+  padding: 0 1rem;
   border: none;
   font-weight: 700;
   position: relative;
   background: linear-gradient(90deg, #2d6cea, #2ea3e0);
   :nth-child(1) {
-    width: 60px;
+    width: auto;
     height: 30px;
     margin-right: 10px;
   }
   :nth-child(2) {
-    width: 80px;
+    width: auto;
     height: 30px;
   }
   :hover {
@@ -69,6 +70,7 @@ export const ButtonHeader = styled.button`
 export const StyledBgHoverGradient = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   position: absolute;
   left: 0;
   top: 0;
