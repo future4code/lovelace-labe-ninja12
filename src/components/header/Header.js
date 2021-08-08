@@ -1,5 +1,10 @@
 import React from 'react'
-import { Header, ButtonHeader, StlLogo } from '../../styles/styles'
+import {
+  Header,
+  ButtonHeader,
+  StlLogo,
+  StyledBgHoverGradient,
+} from '../../styles/styles'
 import Logo from '../../img/ninja.svg'
 
 export default class TelaInicial extends React.Component {
@@ -15,9 +20,13 @@ export default class TelaInicial extends React.Component {
         </div>
 
         <nav>
-          <ButtonHeader onClick={this.props.setPageHome}>Home</ButtonHeader>
+          <ButtonHeader onClick={this.props.setPageHome}>
+            Home
+            <StyledBgHoverGradient>Home</StyledBgHoverGradient>
+          </ButtonHeader>
           <ButtonHeader onClick={this.props.setPageCarrinho}>
             Carrinho
+            <StyledBgHoverGradient>Carrinho</StyledBgHoverGradient>
           </ButtonHeader>
         </nav>
       </Header>

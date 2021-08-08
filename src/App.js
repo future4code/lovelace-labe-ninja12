@@ -1,5 +1,6 @@
 import React from 'react'
 import { GlobalStyle } from './styles/styled-App'
+import { BgEffect } from './styles/styles'
 
 import Header from './components/header/Header'
 import Cart from './components/cart/Cart'
@@ -87,6 +88,7 @@ export default class App extends React.Component {
         />
 
         {this.renderCurrentPage()}
+
 
         <GlobalStyle />
       </>
